@@ -1,7 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+  const logout = () => {
+    signOut(auth);
+    localStorage.removeItem("accessToken");
+  };
   const menuItems = (
     <>
       <li>
@@ -11,7 +19,16 @@ const Navbar = () => {
         <Link to="blogs">Blogs</Link>
       </li>
       <li>
-        <Link to="login">Login</Link>
+        <Link to="dashboard">Dashboard</Link>
+      </li>
+      <li>
+        {user ? (
+          <button onClick={logout} className="btn btn-ghost">
+            Sign Out
+          </button>
+        ) : (
+          <Link to="login">Login</Link>
+        )}
       </li>
     </>
   );
@@ -38,20 +55,18 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex="0"
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-neutral"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-lg text-neutral"
             >
-              { menuItems}
+              {menuItems}
             </ul>
           </div>
 
-          <Link to="/" className="btn btn-ghost normal-case sm:text-xl lg:text-3xl">
+          <Link to="/" className="btn btn-ghost normal-case sm:text-xl lg:text-3xl font-bold">
             Trust Accessories
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal p-0">
-            {menuItems}
-          </ul>
+          <ul className="menu menu-horizontal p-0 text-lg font-bold">{menuItems}</ul>
         </div>
       </div>
     </div>
