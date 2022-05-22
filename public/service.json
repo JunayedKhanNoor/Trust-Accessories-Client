@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "Brake Rotor",
+    "description": "Clean Ride Ceramic keeps your wheels dust-free & Genuine Geomet Coated rotors maintain that new car look. Brake rotors are fully coated, including inside the vanes to extend rotor life, to maintain that great look behind open wheels.",
+    "minOrder": 30,
+    "quantity": 2000,
+    "price": 90,
+    "img": "https://i.ibb.co/k3Vx7hM/Brake-rotor.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Engine Oil 5L",
+    "description":"10X STRONGER THERMAL RESISTANCE than industry standards prevents oil breakdown in harsh conditions",
+    "minOrder": 50,
+    "quantity": 6000,
+    "price": 20,
+    "img": "https://i.ibb.co/XsQpkDr/Oil.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Spark Plug",
+    "description":"The Patented Diamondfire Ground Electrode Is Secured To The Shell With Two Legs To Help Facilitate Heat Transfer, And To Withstand The Intense Vibration Of Power sport Engine Applications ",
+    "minOrder": 70,
+    "quantity": 4000,
+    "price": 10,
+    "img": "https://i.ibb.co/mvPCPn3/spark-plug.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Steel Wheel",
+    "description":"Wheel covers fit most models of vehicle brands including Toyota, Nissan, Honda, Ford, Chevrolet, Kia, Mazda, Hyundai, Mitsubishi, Subaru, Volkswagen and more",
+    "minOrder": 20,
+    "quantity": 1000,
+    "price": 200,
+    "img": "https://i.ibb.co/92qLT7w/wheel.jpg"
+  }
+]
