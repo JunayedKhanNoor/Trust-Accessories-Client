@@ -10,6 +10,8 @@ import Blogs from "./Pages/Blogs/Blogs";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Footer from "./Pages/Shared/Footer";
 import NotFound from "./Pages/NotFound/NotFound";
+import PartsDetails from "./Pages/Home/PartsDetails";
+import RequiredAuth from "./Pages/Login/RequiredAuth";
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/parts/:id" element={<RequiredAuth><PartsDetails></PartsDetails></RequiredAuth>} />
         <Route path="blogs" element={<Blogs />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
