@@ -19,10 +19,10 @@ const SingleParts = ({ singleParts, refetch }) => {
         <p className="font-semibold">Available Quantity: {quantity}</p>
         <p className="font-semibold text-accent">Minimum Order: {minOrder}</p>
         {
-          !quantity && <span className="text-red-500 uppercase">Try another day</span>
+          quantity<minOrder && <span className="text-red-500 uppercase">Stock not available</span>
         }
         <div className="card-actions justify-end">
-          <button disabled={!quantity} className="btn btn-warning" onClick={()=>{navigateToDetail(_id)}}>Purchase</button>
+          <button disabled={quantity<minOrder} className="btn btn-warning" onClick={()=>{navigateToDetail(_id)}}>Purchase</button>
         </div>
       </div>
     </div>

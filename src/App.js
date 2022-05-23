@@ -19,6 +19,7 @@ import ManageOrders from "./Pages/Dashboard/ManageOrders";
 import AddProduct from "./Pages/Dashboard/AddProduct";
 import MakeAdmin from "./Pages/Dashboard/MakeAdmin";
 import ManageProduct from "./Pages/Dashboard/ManageProduct";
+import RequiredAdmin from "./Pages/Login/RequiredAdmin";
 
 function App() {
   return (
@@ -43,15 +44,44 @@ function App() {
             <RequiredAuth>
               <Dashboard></Dashboard>
             </RequiredAuth>
-          }>
-            <Route index element={<MyProfile></MyProfile>}></Route>
-            <Route path="myOrders" element={<MyOrders></MyOrders>}></Route>
-            <Route path="addReview" element={<AddReview></AddReview>}></Route>
-            <Route path="manageOrder" element={<ManageOrders></ManageOrders>}></Route>
-            <Route path="addProduct" element={<AddProduct></AddProduct>}></Route>
-            <Route path="makeAdmin" element={<MakeAdmin></MakeAdmin>}></Route>
-            <Route path="manageProduct" element={<ManageProduct></ManageProduct>}></Route>
-          </Route>
+          }
+        >
+          <Route index element={<MyProfile></MyProfile>}></Route>
+          <Route path="myOrders" element={<MyOrders></MyOrders>}></Route>
+          <Route path="addReview" element={<AddReview></AddReview>}></Route>
+          <Route
+            path="manageOrder"
+            element={
+              <RequiredAdmin>
+                <ManageOrders></ManageOrders>
+              </RequiredAdmin>
+            }
+          ></Route>
+          <Route
+            path="addProduct"
+            element={
+              <RequiredAdmin>
+                <AddProduct></AddProduct>
+              </RequiredAdmin>
+            }
+          ></Route>
+          <Route
+            path="makeAdmin"
+            element={
+              <RequiredAdmin>
+                <MakeAdmin></MakeAdmin>
+              </RequiredAdmin>
+            }
+          ></Route>
+          <Route
+            path="manageProduct"
+            element={
+              <RequiredAdmin>
+                <ManageProduct></ManageProduct>
+              </RequiredAdmin>
+            }
+          ></Route>
+        </Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
