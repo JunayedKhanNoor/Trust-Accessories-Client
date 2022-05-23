@@ -64,15 +64,19 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <Link to="/" className="btn btn-ghost normal-case sm:text-xl lg:text-3xl font-bold">
+          <a className="btn btn-ghost normal-case sm:text-xl lg:text-3xl font-bold">
             Trust Accessories
-          </Link>
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0 text-lg font-bold">{menuItems}</ul>
         </div>
         <div className="navbar-end lg:hidden">
-          <label for="dashboard-drawer" class="btn btn-outline drawer-button lg:hidden">
+          <label
+            tabIndex="1"
+            htmlFor="dashboard-drawer"
+            className="btn btn-outline drawer-button lg:hidden text-white"
+          >
             <MdOutlineDashboardCustomize />
           </label>
         </div>
