@@ -17,7 +17,7 @@ const Deals = () => {
           <li className="step">Receive Product</li>
         </ul>
       </div>
-      {/* <span class="animate-ping absolute left-0  h-6 w-1/3 rounded-full bg-neutral opacity-75 hidden md:inline-flex"></span> */}
+      {/* <span className="animate-ping absolute left-0  h-6 w-1/3 rounded-full bg-neutral opacity-75 hidden md:inline-flex"></span> */}
       <h1 className="text-center text-2xl md:text-4xl mt-12 md:mt-24 mb-12 font-bold uppercase">
         Our manufactured parts and accessories
       </h1>
