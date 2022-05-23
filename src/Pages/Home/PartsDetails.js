@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
 
@@ -11,6 +12,7 @@ const PartsDetails = () => {
   const [errorMessage,setErrorMessage] = useState('');
   const [myOrder, setMyOrder] = useState({
     name: "",
+    userName: "",
     email: "",
     address: "",
     contact: "",
@@ -25,11 +27,12 @@ const PartsDetails = () => {
   );
   useEffect(()=>{
         // setMyOrder({ ...myOrder, name: user.displayName});
-        setMyOrder(previous=>({ ...previous, name: user?.displayName}));
+        setMyOrder(previous=>({ ...previous, userName: user?.displayName}));
         setMyOrder(previous=>({ ...previous, email: user?.email}));
 },[user])
   useEffect(()=>{
         setMyOrder(previous=>({ ...previous, quantity: accessory?.minOrder}));  
+        setMyOrder(previous=>({ ...previous, name: accessory?.name}));  
         
 },[accessory])
 const handleInput = (e) => {
@@ -39,12 +42,32 @@ const handleInput = (e) => {
   const handleSubmit = e =>{
       e.preventDefault();
       if (myOrder.quantity<accessory.minOrder) {
+          setErrorMessage("Can not order bellow minimum quantity");
+          toast.error("Can not order bellow minimum quantity");
           return
       }
       if (myOrder.quantity>accessory.quantity) {
+          setErrorMessage("Can not order more than available quantity");
+          toast.error("Can not order more than available quantity")
           return
       }
-      console.log(myOrder);
+      fetch(`http://localhost:5000/order/${id}`,{
+          method: 'POST',
+          headers:{
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(myOrder),
+      })
+      .then(res=>res.json())
+      .then(data=>{
+        console.log(myOrder);
+        if (data.success) {
+            toast.success(`Order is set for, ${myOrder.name}`);
+          }else{
+            toast.error(`Order not Successful for , ${myOrder.name}`);
+          }
+        refetch();
+      })
   }
   if (isLoading || loading) {
     return <Loading></Loading>;
@@ -60,12 +83,22 @@ const handleInput = (e) => {
                   Please fill the Purchase form{" "}
                 </h2>
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text">Accessories Name</span>
                 </label>
                 <input
                   type="text"
                   name="name"
-                  value={myOrder?.name || ''}
+                  value={accessory?.name || ''}
+                  className="input input-bordered w-full md:max-w-md"
+                  disabled
+                />
+                <label className="label">
+                  <span className="label-text">Your Name</span>
+                </label>
+                <input
+                  type="text"
+                  name="userName"
+                  value={myOrder?.userName || ''}
                   placeholder="Your Name"
                   className="input input-bordered w-full md:max-w-md"
                   onChange={handleInput}
@@ -91,6 +124,7 @@ const handleInput = (e) => {
                   placeholder="Your Name"
                   className="input input-bordered w-full md:max-w-md"
                   onChange={handleInput}
+                  required
                 />
                 <label className="label">
                   <span className="label-text">Address</span>
@@ -101,6 +135,7 @@ const handleInput = (e) => {
                 value={myOrder?.address || ''} 
                 placeholder="Your Address" 
                 onChange={handleInput}
+                required
                 className="input input-bordered w-full md:max-w-md" />
                 <label className="label">
                   <span className="label-text">Contact Number</span>
@@ -112,9 +147,10 @@ const handleInput = (e) => {
                   placeholder="Your Name"
                   className="input input-bordered w-full md:max-w-md"
                   onChange={handleInput}
+                  required
                 />
-              <div className="mt-6">
-                <button className="btn btn-primary">Submit Order</button>
+              <div className="mt-4">
+                <button className="btn btn-primary w-full">Submit Order</button>
               </div>
               </form>
             </div>
