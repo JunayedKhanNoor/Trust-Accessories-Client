@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
+import { MdOutlineDashboardCustomize } from "react-icons/md";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
@@ -18,9 +19,11 @@ const Navbar = () => {
       <li>
         <Link to="blogs">Blogs</Link>
       </li>
-      <li>
-        <Link to="dashboard">Dashboard</Link>
-      </li>
+      {user && (
+        <li>
+          <Link to="dashboard">Dashboard</Link>
+        </li>
+      )}
       <li>
         {user ? (
           <button onClick={logout} className="btn btn-outline">
@@ -67,6 +70,11 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0 text-lg font-bold">{menuItems}</ul>
+        </div>
+        <div className="navbar-end lg:hidden">
+          <label for="dashboard-drawer" class="btn btn-outline drawer-button lg:hidden">
+            <MdOutlineDashboardCustomize />
+          </label>
         </div>
       </div>
     </div>

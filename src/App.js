@@ -19,11 +19,27 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/parts/:id" element={<RequiredAuth><PartsDetails></PartsDetails></RequiredAuth>} />
+        <Route
+          path="/parts/:id"
+          element={
+            <RequiredAuth>
+              <PartsDetails></PartsDetails>
+            </RequiredAuth>
+          }
+        />
         <Route path="blogs" element={<Blogs />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
-        <Route path="dashboard" element={<Dashboard />} />
+        <Route
+          path="dashboard"
+          element={
+            <RequiredAuth>
+              <Dashboard>
+                
+              </Dashboard>
+            </RequiredAuth>
+          }
+        />
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
