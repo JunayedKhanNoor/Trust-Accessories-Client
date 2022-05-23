@@ -12,6 +12,13 @@ import Footer from "./Pages/Shared/Footer";
 import NotFound from "./Pages/NotFound/NotFound";
 import PartsDetails from "./Pages/Home/PartsDetails";
 import RequiredAuth from "./Pages/Login/RequiredAuth";
+import MyProfile from "./Pages/Dashboard/MyProfile";
+import MyOrders from "./Pages/Dashboard/MyOrders";
+import AddReview from "./Pages/Dashboard/AddReview";
+import ManageOrders from "./Pages/Dashboard/ManageOrders";
+import AddProduct from "./Pages/Dashboard/AddProduct";
+import MakeAdmin from "./Pages/Dashboard/MakeAdmin";
+import ManageProduct from "./Pages/Dashboard/ManageProduct";
 
 function App() {
   return (
@@ -34,12 +41,17 @@ function App() {
           path="dashboard"
           element={
             <RequiredAuth>
-              <Dashboard>
-                
-              </Dashboard>
+              <Dashboard></Dashboard>
             </RequiredAuth>
-          }
-        />
+          }>
+            <Route index element={<MyProfile></MyProfile>}></Route>
+            <Route path="myOrders" element={<MyOrders></MyOrders>}></Route>
+            <Route path="addReview" element={<AddReview></AddReview>}></Route>
+            <Route path="manageOrder" element={<ManageOrders></ManageOrders>}></Route>
+            <Route path="addProduct" element={<AddProduct></AddProduct>}></Route>
+            <Route path="makeAdmin" element={<MakeAdmin></MakeAdmin>}></Route>
+            <Route path="manageProduct" element={<ManageProduct></ManageProduct>}></Route>
+          </Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
