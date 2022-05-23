@@ -9,6 +9,7 @@ import SignUp from "./Pages/Login/SignUp";
 import Blogs from "./Pages/Blogs/Blogs";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Footer from "./Pages/Shared/Footer";
+import NotFound from "./Pages/NotFound/NotFound";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer />
