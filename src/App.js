@@ -20,6 +20,7 @@ import AddProduct from "./Pages/Dashboard/AddProduct";
 import MakeAdmin from "./Pages/Dashboard/MakeAdmin";
 import ManageProduct from "./Pages/Dashboard/ManageProduct";
 import RequiredAdmin from "./Pages/Login/RequiredAdmin";
+import EditAccessory from "./Pages/Dashboard/EditAccessory";
 
 function App() {
   return (
@@ -78,6 +79,14 @@ function App() {
             element={
               <RequiredAdmin>
                 <ManageProduct></ManageProduct>
+              </RequiredAdmin>
+            }
+          ></Route>
+          <Route
+            path="manageProduct/:id"
+            element={
+              <RequiredAdmin>
+                <EditAccessory></EditAccessory>
               </RequiredAdmin>
             }
           ></Route>
