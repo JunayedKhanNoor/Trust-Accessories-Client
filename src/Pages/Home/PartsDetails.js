@@ -23,7 +23,7 @@ const PartsDetails = () => {
     isLoading,
     refetch,
   } = useQuery("accessory", () =>
-    fetch(`http://localhost:5000/accessory/${id}`).then((res) => res.json())
+    fetch(`http://localhost:5000/accessories/${id}`).then((res) => res.json())
   );
   useEffect(()=>{
         // setMyOrder({ ...myOrder, name: user.displayName});
