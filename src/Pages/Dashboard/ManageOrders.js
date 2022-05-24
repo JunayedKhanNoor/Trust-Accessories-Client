@@ -12,7 +12,7 @@ const ManageOrders = () => {
     isLoading,
     refetch,
   } = useQuery(["available", page], () =>
-    fetch(`http://localhost:5000/accessoriesPage?page=${page}&size=${pageSize}`, {
+    fetch(`http://localhost:5000/ordersPage?page=${page}&size=${pageSize}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -20,12 +20,11 @@ const ManageOrders = () => {
     }).then((res) => res.json())
   );
   useEffect(() => {
-    fetch("http://localhost:5000/accessoriesCount")
+    fetch("http://localhost:5000/orderCount")
       .then((res) => res.json())
       .then((data) => {
         const page = Math.ceil(data.count / pageSize);
-        setPageCount(page + 1);
-        console.log(pageCount);
+        setPageCount(page);
         refetch();
       });
   }, [pageCount, pageSize, refetch]);
@@ -42,6 +41,7 @@ const ManageOrders = () => {
               <th>Product Name</th>
               <th>Order Quantity</th>
               <th>Customer Email</th>
+              <th>Payment</th>
               <th>Status</th>
               <th>Remove</th>
             </tr>

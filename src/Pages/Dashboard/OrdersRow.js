@@ -13,6 +13,9 @@ const OrdersRow = ({order,refetch,index}) => {
           {email}
         </td>
         <td>
+          Not Paid
+        </td>
+        <td>
         <label className="btn btn-sm">Shift</label>
       </td>
         <td>

@@ -16,7 +16,8 @@ const PartsDetails = () => {
     email: "",
     address: "",
     contact: "",
-    quantity:""
+    quantity:"",
+    accessoryId:id,
   });
   const {
     data: accessory,
@@ -41,12 +42,12 @@ const handleInput = (e) => {
   };
   const handleSubmit = e =>{
       e.preventDefault();
-      if (myOrder.quantity<accessory.minOrder) {
+      if (+myOrder.quantity<+accessory.minOrder) {
           setErrorMessage("Can not order bellow minimum quantity");
           toast.error("Can not order bellow minimum quantity");
           return
       }
-      if (myOrder.quantity>accessory.quantity) {
+      if (+myOrder.quantity>+accessory.quantity) {
           setErrorMessage("Can not order more than available quantity");
           toast.error("Can not order more than available quantity")
           return
@@ -144,7 +145,7 @@ const handleInput = (e) => {
                   type="number"
                   name="contact"
                   value={myOrder?.contact || ''}
-                  placeholder="Your Name"
+                  placeholder="Your Number"
                   className="input input-bordered w-full md:max-w-md"
                   onChange={handleInput}
                   required
