@@ -10,7 +10,7 @@ const SingleParts = ({ singleParts, refetch }) => {
   return (
     <div className="card card-compact w-full md:max-w-sm bg-base-100 shadow-xl">
       <figure>
-        <img src={img} alt="Shoes" />
+        <img src={img} alt="Shoes" className="max-h-60"/>
       </figure>
       <div className="card-body">
         <h2 className="card-title">{name}</h2>
@@ -19,10 +19,13 @@ const SingleParts = ({ singleParts, refetch }) => {
         <p className="font-semibold">Available Quantity: {quantity}</p>
         <p className="font-semibold text-accent">Minimum Order: {minOrder}</p>
         {
-          quantity<minOrder && <span className="text-red-500 uppercase">Stock not available</span>
+          +quantity<+minOrder && <span className="text-red-500 uppercase">Stock not available</span>
+         
         }
+        { console.log({minOrder})}
+        { console.log({quantity})}
         <div className="card-actions justify-end">
-          <button disabled={quantity<minOrder} className="btn btn-warning" onClick={()=>{navigateToDetail(_id)}}>Purchase</button>
+          <button disabled={+quantity<+minOrder} className="btn btn-warning" onClick={()=>{navigateToDetail(_id)}}>Purchase</button>
         </div>
       </div>
     </div>
