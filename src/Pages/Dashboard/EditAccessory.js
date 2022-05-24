@@ -17,7 +17,7 @@ const EditAccessory = () => {
     data: accessory,
     isLoading,
     refetch,
-  } = useQuery("accessory", () =>
+  } = useQuery(["accessory",id], () =>
     fetch(`http://localhost:5000/accessories/${id}`).then((res) => res.json())
   );
   const onSubmit = async (data) => {
