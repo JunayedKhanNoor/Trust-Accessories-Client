@@ -31,8 +31,8 @@ const EditAccessory = () => {
             img: data.image,
           };
            console.log(accessory);
-          fetch("http://localhost:5000/accessories", {
-            method: "POST",
+          fetch(`http://localhost:5000/accessories/${id}`, {
+            method: "PUT",
             headers: {
               "Content-Type": "application/json",
               authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -41,12 +41,13 @@ const EditAccessory = () => {
           })
             .then((res) => res.json())
             .then((inserted) => {
-              console.log("Post Accessory", inserted);
-              if (inserted.insertedId) {
+              console.log("Update Accessory", inserted);
+              if (inserted.success) {
                 toast.success("Your Accessory added!", {
                   position: toast.POSITION.TOP_CENTER,
                 });
                 reset();
+                refetch();
               } else {
                 toast.error("Failed to add Accessory", {
                   position: toast.POSITION.TOP_CENTER,
