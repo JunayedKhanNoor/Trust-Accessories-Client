@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductRow = ({ accessory, refetch, index }) => {
+const ProductRow = ({ accessory, refetch, index,setDeletingAccessory }) => {
   const { _id, name, description, minOrder, quantity, price, img } = accessory;
   return (
     <tr>
@@ -17,7 +17,7 @@ const ProductRow = ({ accessory, refetch, index }) => {
         <label className="btn btn-sm">Edit</label>
       </td>
       <td>
-        <label htmlFor="delete-confirm-modal" className="btn btn-sm btn-error">
+        <label onClick={()=>setDeletingAccessory(accessory)} htmlFor="delete-confirm-modal" className="btn btn-sm btn-error">
           Delete
         </label>
       </td>

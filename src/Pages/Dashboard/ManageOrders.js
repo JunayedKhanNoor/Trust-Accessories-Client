@@ -59,7 +59,7 @@ const ManageOrders = () => {
             type="radio"
             name="options"
             data-title={number + 1}
-            class="btn"
+            className="btn"
             checked={page === number}
             onClick={() => {
               setPage(number);
