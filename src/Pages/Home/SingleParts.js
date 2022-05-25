@@ -22,8 +22,6 @@ const SingleParts = ({ singleParts, refetch }) => {
           +quantity<+minOrder && <span className="text-red-500 uppercase">Stock not available</span>
          
         }
-        { console.log({minOrder})}
-        { console.log({quantity})}
         <div className="card-actions justify-end">
           <button disabled={+quantity<+minOrder} className="btn btn-warning" onClick={()=>{navigateToDetail(_id)}}>Purchase</button>
         </div>
