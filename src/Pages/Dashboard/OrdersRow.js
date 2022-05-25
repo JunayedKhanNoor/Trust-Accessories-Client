@@ -2,7 +2,19 @@ import React, { useState } from 'react';
 
 const OrdersRow = ({order,refetch,index,setDeletingMyOrder}) => {
   
-    const { _id, name, email, quantity,paid } = order;
+    const { _id, name, email, quantity,paid, status } = order;
+    const markDelivered = ()=>{
+      fetch(`http://localhost:5000/orderStatus/${_id}`,{
+            method: "PATCH",
+            headers: {
+              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+              "Content-Type": "application/json",
+            }
+        }).then(res=>res.json()).then(data=>{
+            console.log(data);
+            refetch();
+        })
+    }
     return (
         <tr>
         <th>{index + 1}</th>
@@ -20,7 +32,10 @@ const OrdersRow = ({order,refetch,index,setDeletingMyOrder}) => {
         </td>
         <td>
         {
-          paid && <label className="btn btn-sm">Mark as Delivered</label>
+          paid && !status && <label onClick={()=>markDelivered()} className="btn btn-sm">Mark as Delivered</label>
+        }
+        {
+          paid && status && <p className="text-success">Item Delivered</p>
         }
       </td>
         <td>
