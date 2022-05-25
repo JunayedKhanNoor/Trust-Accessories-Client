@@ -61,10 +61,11 @@ const ManageOrders = () => {
         {[...Array(pageCount).keys()].map((number) => (
           <input
             type="radio"
+            key={number}
             name="options"
             data-title={number + 1}
             className="btn"
-            checked={page === number}
+            defaultChecked={page === number}
             onClick={() => {
               setPage(number);
               refetch();
