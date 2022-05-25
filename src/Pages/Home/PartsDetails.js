@@ -17,6 +17,7 @@ const PartsDetails = () => {
     address: "",
     contact: "",
     quantity:"",
+    price:"",
     accessoryId:id,
   });
   const {
@@ -34,6 +35,7 @@ const PartsDetails = () => {
   useEffect(()=>{
         setMyOrder(previous=>({ ...previous, quantity: accessory?.minOrder}));  
         setMyOrder(previous=>({ ...previous, name: accessory?.name}));  
+        setMyOrder(previous=>({ ...previous, price: accessory?.price}));  
         
 },[accessory])
 const handleInput = (e) => {

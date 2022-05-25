@@ -11,15 +11,20 @@ const ManageProduct = () => {
     isLoading,
     refetch,
   } = useQuery("available", () =>
-    fetch("http://localhost:5000/accessories").then((res) => res.json())
+    fetch("http://localhost:5000/accessories", {
+      method: "GET",
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      },
+    }).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading></Loading>;
   }
   return (
     <div>
-       <h1 className="text-2xl font-bold">Manage Your Accessory</h1>
-        <div className="divider"></div>
+      <h1 className="text-2xl font-bold">Manage Your Accessory</h1>
+      <div className="divider"></div>
       <div className="overflow-x-auto">
         <table className="table  w-full">
           <thead>
