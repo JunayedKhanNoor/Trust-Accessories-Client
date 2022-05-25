@@ -11,8 +11,6 @@ const Dashboard = () => {
     <div className="drawer drawer-mobile">
       <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
-        <h1 className="text-2xl font-bold">Manage and Update from Dashboard</h1>
-        <div className="divider"></div>
         <Outlet></Outlet>
       </div>
       <div className="drawer-side">

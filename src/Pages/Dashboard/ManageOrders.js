@@ -33,6 +33,8 @@ const ManageOrders = () => {
   }
   return (
     <div>
+      <h1 className="text-2xl font-bold">Manage Your Customer Orders</h1>
+        <div className="divider"></div>
       <div className="overflow-x-auto">
         <table className="table  w-full">
           <thead>

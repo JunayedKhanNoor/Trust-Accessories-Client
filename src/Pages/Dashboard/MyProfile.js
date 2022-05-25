@@ -52,6 +52,8 @@ const MyProfile = () => {
   }
   return (
     <div>
+       <h1 className="text-2xl font-bold">Manage Your Profile</h1>
+        <div className="divider"></div>
       <div className="card w-96 bg-neutral text-neutral-content">
         <div className="card-body items-start">
           <h2 className="card-title border-b-2">My Profile</h2>

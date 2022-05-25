@@ -61,7 +61,8 @@ const AddProduct = () => {
   };
   return (
     <div>
-      <h1 className="text-3xl uppercase text-success px-3">Please Add Your Accessory</h1>
+      <h1 className="text-2xl font-bold">Please Add Your Accessory</h1>
+        <div className="divider"></div>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="max-w-full md:max-w-md card shadow-xl px-3 py-5"

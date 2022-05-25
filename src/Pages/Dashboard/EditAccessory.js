@@ -80,7 +80,8 @@ const EditAccessory = () => {
         </figure>
         <div class="card-body">
         <div>
-      <h1 className="text-3xl uppercase text-secondary px-3">Update Your Accessory</h1>
+        <h1 className="text-2xl font-bold">Please Update Your Accessory</h1>
+        <div className="divider"></div>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="max-w-full md:max-w-md card shadow-xl px-3 py-5"
