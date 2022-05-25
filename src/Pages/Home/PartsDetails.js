@@ -25,7 +25,7 @@ const PartsDetails = () => {
     isLoading,
     refetch,
   } = useQuery("accessory", () =>
-    fetch(`http://localhost:5000/accessories/${id}`).then((res) => res.json())
+    fetch(`https://warm-caverns-09302.herokuapp.com/accessories/${id}`).then((res) => res.json())
   );
   useEffect(()=>{
         // setMyOrder({ ...myOrder, name: user.displayName});
@@ -54,7 +54,7 @@ const handleInput = (e) => {
           toast.error("Can not order more than available quantity")
           return
       }
-      fetch(`http://localhost:5000/order/${id}`,{
+      fetch(`https://warm-caverns-09302.herokuapp.com/order/${id}`,{
           method: 'POST',
           headers:{
             'Content-Type': 'application/json',

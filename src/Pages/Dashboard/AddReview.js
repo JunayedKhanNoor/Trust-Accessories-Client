@@ -19,7 +19,7 @@ const AddReview = () => {
       rating: data.rating,
       name: user.displayName,
     };
-    fetch("http://localhost:5000/review", {
+    fetch("https://warm-caverns-09302.herokuapp.com/review", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

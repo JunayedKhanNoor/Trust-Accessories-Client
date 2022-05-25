@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 const DeleteConfirm = ({ deletingMyOrder, setDeletingMyOrder, refetch }) => {
     const handleDelete=()=>{
-        fetch(`http://localhost:5000/myOrders?orderId=${deletingMyOrder._id}&accessoryId=${deletingMyOrder.accessoryId}`,{
+        fetch(`https://warm-caverns-09302.herokuapp.com/myOrders?orderId=${deletingMyOrder._id}&accessoryId=${deletingMyOrder.accessoryId}`,{
             method: "DELETE",
             headers: {
               authorization: `Bearer ${localStorage.getItem("accessToken")}`,

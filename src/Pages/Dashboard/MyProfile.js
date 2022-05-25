@@ -19,11 +19,11 @@ const MyProfile = () => {
     isLoading,
     refetch,
   } = useQuery(["user", authUser], () =>
-    fetch(`http://localhost:5000/userProfile/${authUser.email}`).then((res) => res.json())
+    fetch(`https://warm-caverns-09302.herokuapp.com/userProfile/${authUser.email}`).then((res) => res.json())
   );
   const onSubmit = async (data) => {
     console.log(data);
-    fetch(`http://localhost:5000/userProfile/${authUser.email}`, {
+    fetch(`https://warm-caverns-09302.herokuapp.com/userProfile/${authUser.email}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

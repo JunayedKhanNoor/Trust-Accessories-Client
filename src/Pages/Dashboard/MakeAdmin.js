@@ -9,7 +9,7 @@ const MakeAdmin = () => {
     isLoading,
     refetch,
   } = useQuery("userData", ()=>
-    fetch("http://localhost:5000/user", {
+    fetch("https://warm-caverns-09302.herokuapp.com/user", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -30,7 +30,7 @@ const MakeAdmin = () => {
               <th></th>
               <th>User Email</th>
               <th>Admin User</th>
-              <th>Delete User</th>
+              {/* <th>Delete User</th> */}
             </tr>
           </thead>
           <tbody>

@@ -8,7 +8,7 @@ const UserReview = () => {
     data: reviews,
     isLoading,
     refetch,
-  } = useQuery("reviews", () => fetch("http://localhost:5000/review").then((res) => res.json()));
+  } = useQuery("reviews", () => fetch("https://warm-caverns-09302.herokuapp.com/review").then((res) => res.json()));
   if (isLoading) {
     return <Loading></Loading>;
   }

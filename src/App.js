@@ -22,6 +22,7 @@ import ManageProduct from "./Pages/Dashboard/ManageProduct";
 import RequiredAdmin from "./Pages/Login/RequiredAdmin";
 import EditAccessory from "./Pages/Dashboard/EditAccessory";
 import Payment from "./Pages/Dashboard/Payment";
+import MyPortfolio from "./Pages/Blogs/MyPortfolio";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           }
         />
         <Route path="blogs" element={<Blogs />} />
+        <Route path="portfolio" element={<MyPortfolio />} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
         <Route

@@ -4,7 +4,7 @@ const OrdersRow = ({order,refetch,index,setDeletingMyOrder}) => {
   
     const { _id, name, email, quantity,paid, status } = order;
     const markDelivered = ()=>{
-      fetch(`http://localhost:5000/orderStatus/${_id}`,{
+      fetch(`https://warm-caverns-09302.herokuapp.com/orderStatus/${_id}`,{
             method: "PATCH",
             headers: {
               authorization: `Bearer ${localStorage.getItem("accessToken")}`,

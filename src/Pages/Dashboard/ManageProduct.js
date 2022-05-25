@@ -11,7 +11,7 @@ const ManageProduct = () => {
     isLoading,
     refetch,
   } = useQuery("available", () =>
-    fetch("http://localhost:5000/accessories", {
+    fetch("https://warm-caverns-09302.herokuapp.com/accessories", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,

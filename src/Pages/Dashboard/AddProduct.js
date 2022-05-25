@@ -34,7 +34,7 @@ const AddProduct = () => {
             img: img,
           };
           console.log(accessory);
-          fetch("http://localhost:5000/accessories", {
+          fetch("https://warm-caverns-09302.herokuapp.com/accessories", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

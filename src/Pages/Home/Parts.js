@@ -9,7 +9,7 @@ const Parts = () => {
     isLoading,
     refetch,
   } = useQuery("available", () =>
-    fetch("http://localhost:5000/accessories").then((res) => res.json())
+    fetch("https://warm-caverns-09302.herokuapp.com/accessories").then((res) => res.json())
   );
   if (isLoading) {
     return <Loading></Loading>;

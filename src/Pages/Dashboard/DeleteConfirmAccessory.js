@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const DeleteConfirmAccessory = ({ setDeletingAccessory, deletingAccessory, refetch }) => {
     const { name, img,_id } = deletingAccessory;
     const handleDelete = () => {
-        fetch(`http://localhost:5000/accessories/${_id}`, {
+        fetch(`https://warm-caverns-09302.herokuapp.com/accessories/${_id}`, {
           method: "DELETE",
           headers: {
             authorization: `Bearer ${localStorage.getItem("accessToken")}`,

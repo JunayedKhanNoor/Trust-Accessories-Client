@@ -14,7 +14,7 @@ const ManageOrders = () => {
     isLoading,
     refetch,
   } = useQuery(["available", page], () =>
-    fetch(`http://localhost:5000/ordersPage?page=${page}&size=${pageSize}`, {
+    fetch(`https://warm-caverns-09302.herokuapp.com/ordersPage?page=${page}&size=${pageSize}`, {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -22,7 +22,7 @@ const ManageOrders = () => {
     }).then((res) => res.json())
   );
   useEffect(() => {
-    fetch("http://localhost:5000/orderCount")
+    fetch("https://warm-caverns-09302.herokuapp.com/orderCount")
       .then((res) => res.json())
       .then((data) => {
         const page = Math.ceil(data.count / pageSize);

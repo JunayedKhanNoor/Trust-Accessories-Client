@@ -18,7 +18,7 @@ const EditAccessory = () => {
     isLoading,
     refetch,
   } = useQuery(["accessory",id], () =>
-    fetch(`http://localhost:5000/accessories/${id}`).then((res) => res.json())
+    fetch(`https://warm-caverns-09302.herokuapp.com/accessories/${id}`).then((res) => res.json())
   );
   const onSubmit = async (data) => {
     console.log(data);
@@ -31,7 +31,7 @@ const EditAccessory = () => {
             img: data.image,
           };
            console.log(accessory);
-          fetch(`http://localhost:5000/accessories/${id}`, {
+          fetch(`https://warm-caverns-09302.herokuapp.com/accessories/${id}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",

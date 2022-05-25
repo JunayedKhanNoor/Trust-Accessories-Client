@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 const UserRow = ({ user,refetch,index}) => {
   const { email, role } = user;
   const makeAdmin = () =>{
-      fetch(`http://localhost:5000/user/admin/${email}`,{
+      fetch(`https://warm-caverns-09302.herokuapp.com/user/admin/${email}`,{
           method: "PUT",
           headers:{
             "authorization": `Bearer ${localStorage.getItem("accessToken")}`,
@@ -29,8 +29,8 @@ const UserRow = ({ user,refetch,index}) => {
     <tr>
       <th>{index}</th>
       <td>{email}</td>
-      <td>{role !== "admin" && <button className="btn btn-xs" onClick={makeAdmin}>Make Admin</button>}</td>
-      <td><button className="btn btn-xs btn-error">Remove User</button></td>
+      <td>{role !== "admin" && <button className="btn btn-sm" onClick={makeAdmin}>Make Admin</button>}</td>
+      {/* <td><button className="btn btn-xs btn-error">Remove User</button></td> */}
     </tr>
   );
 };
