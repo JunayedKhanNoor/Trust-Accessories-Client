@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
@@ -7,9 +7,11 @@ import { MdOutlineDashboardCustomize } from "react-icons/md";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
+  const navigate = useNavigate();
   const logout = () => {
     signOut(auth);
     localStorage.removeItem("accessToken");
+    navigate('/');
   };
   const menuItems = (
     <>

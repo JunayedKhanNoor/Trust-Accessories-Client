@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import Loading from "../Shared/Loading";
+import DeleteConfirm from "./DeleteConfirm";
 import OrdersRow from "./OrdersRow";
 
 const ManageOrders = () => {
   const [pageCount, setPageCount] = useState(0);
   const [page, setPage] = useState(0);
   const [pageSize, setPageSize] = useState(10);
+  const [deletingMyOrder, setDeletingMyOrder] = useState(null);
   const {
     data: orders,
     isLoading,
@@ -50,7 +52,7 @@ const ManageOrders = () => {
           </thead>
           <tbody>
             {orders.map((order, index) => (
-              <OrdersRow key={order._id} order={order} refetch={refetch} index={index}></OrdersRow>
+              <OrdersRow key={order._id} order={order} refetch={refetch} index={index} setDeletingMyOrder={setDeletingMyOrder}></OrdersRow>
             ))}
           </tbody>
         </table>
@@ -70,6 +72,7 @@ const ManageOrders = () => {
           />
         ))}
       </div>
+      {deletingMyOrder && <DeleteConfirm  setDeletingMyOrder={setDeletingMyOrder} deletingMyOrder={deletingMyOrder} refetch={refetch}></DeleteConfirm>}
     </div>
   );
 };

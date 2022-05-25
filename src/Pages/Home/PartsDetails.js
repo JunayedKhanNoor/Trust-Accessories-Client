@@ -35,7 +35,7 @@ const PartsDetails = () => {
   useEffect(()=>{
         setMyOrder(previous=>({ ...previous, quantity: accessory?.minOrder}));  
         setMyOrder(previous=>({ ...previous, name: accessory?.name}));  
-        setMyOrder(previous=>({ ...previous, price: accessory?.price}));  
+        setMyOrder(previous=>({ ...previous, price: Number(accessory?.price)*Number(accessory?.minOrder)}));  
         
 },[accessory])
 const handleInput = (e) => {

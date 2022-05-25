@@ -22,7 +22,7 @@ const ProductRow = ({ accessory, refetch, index,setDeletingAccessory }) => {
         <label className="btn btn-sm" onClick={()=>navigateToDetail(_id)}>Edit</label>
       </td>
       <td>
-        <label onClick={()=>setDeletingAccessory(accessory)} htmlFor="delete-confirm-modal" className="btn btn-sm btn-error">
+        <label onClick={()=>setDeletingAccessory(accessory)} htmlFor="delete-confirm-modal-accessory" className="btn btn-sm btn-error">
           Delete
         </label>
       </td>
