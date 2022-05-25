@@ -31,6 +31,7 @@ const MyOrdersRow = ({ order, refetch, index, setDeletingMyOrder }) => {
           onClick={() => setDeletingMyOrder(order)}
           htmlFor="delete-confirm-modal"
           className="btn btn-sm btn-error"
+          disabled={paid}
         >
           Cancel
         </label>

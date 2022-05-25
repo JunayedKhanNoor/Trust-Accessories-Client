@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const OrdersRow = ({order,refetch,index,setDeletingMyOrder}) => {
   
-    const { _id, name, email, quantity } = order;
+    const { _id, name, email, quantity,paid } = order;
     return (
         <tr>
         <th>{index + 1}</th>
@@ -13,14 +13,18 @@ const OrdersRow = ({order,refetch,index,setDeletingMyOrder}) => {
         <td>
           {email}
         </td>
-        <td>
-          Not Paid
+        <td className='font-bold'>
+          {
+            paid?"Payment Complete":"Not Paid"
+          }
         </td>
         <td>
-        <label className="btn btn-sm">Shift</label>
+        {
+          paid && <label className="btn btn-sm">Mark as Delivered</label>
+        }
       </td>
         <td>
-          <label onClick={() => setDeletingMyOrder(order)} htmlFor="delete-confirm-modal" className="btn btn-sm btn-error">
+          <label onClick={() => setDeletingMyOrder(order)} htmlFor="delete-confirm-modal" className="btn btn-sm btn-error" disabled={paid}>
             Delete
           </label>
         </td>
