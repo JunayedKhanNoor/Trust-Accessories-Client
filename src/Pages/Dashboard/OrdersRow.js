@@ -27,12 +27,17 @@ const OrdersRow = ({order,refetch,index,setDeletingMyOrder}) => {
         </td>
         <td className='font-bold'>
           {
-            paid?"Payment Complete":"Not Paid"
+            paid?<span className='text-success'>Payment Complete</span>:<span className='text-error'>Not Paid</span>
           }
         </td>
         <td>
         {
-          paid && !status && <label onClick={()=>markDelivered()} className="btn btn-sm">Mark as Delivered</label>
+          paid && !status && (
+            <div>
+              <p className="text-error">Pending</p>
+              <label onClick={()=>markDelivered()} className="btn btn-sm">Mark as Delivered</label>
+            </div>
+          )
         }
         {
           paid && status && <p className="text-success">Item Delivered</p>
