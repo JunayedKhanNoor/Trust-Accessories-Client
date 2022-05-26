@@ -1,11 +1,234 @@
-import React from 'react';
-
+import React from "react";
+import { RiNumber1, RiNumber2, RiNumber3, RiNumber4, RiNumber5, RiNumber6 } from "react-icons/ri";
 const Blogs = () => {
-    return (
-        <div>
-            <h2>Blogs</h2>
+  return (
+    <div className="min-h-screen font-mono">
+      <h1 className="text-center text-2xl md:text-4xl font-extrabold my-12">
+        Question answer, all about React Js
+      </h1>
+      <div
+        tabindex="0"
+        className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full md:w-[50%] mx-auto my-8"
+      >
+        <div className="collapse-title text-xl font-medium">
+          How will you improve the performance of a React Application?
         </div>
-    );
+        <div className="collapse-content">
+          <div className="card w-full  bg-base-100 shadow-xl mx-auto my-8">
+            <div className="card-body">
+              <div className="card-actions justify-end ">
+                <button className="btn btn-square btn-sm animate-pulse">
+                  <RiNumber1 className="text-xl " />
+                </button>
+              </div>
+              <h1 className="text-xl font-bold">
+                How will you improve the performance of a React Application?
+              </h1>
+              <div className="divider"></div>
+              <p>
+                So how did we improve the performance of a React Application? We came to know that
+                all of these are happening because of the unnecessary re-rendering of components.
+                Horribly it is killing the performance of a React Application. We looked at the
+                smallest of the components and asked ourselves that if the data is not changing,
+                then why does this component re-render itself? We started seeing the patterns and
+                came up with the resolutions below:
+              </p>
+              <h1 className="text-lg font-bold">1. Remove all Inline Functions</h1>
+              <p>
+                An inline function is a function that is defined and passed down inside the render
+                method of a React component. Our code was filled with inline functions. Inline
+                functions have 2 big problems:
+              </p>
+              <li>
+                It will always trigger a re-render of the component even if there is no change in
+                the props.
+              </li>
+              <li>
+                It increases the memory footprint of the app. (Refer: Function spaces in Memory
+                snapshot of Firefox)
+              </li>
+              <p className="text-lg font-bold">
+                Solution: Move all inline functions outside the render() such that it does not get
+                redefined on every render cycle.
+              </p>
+              <p className="text-lg font-bold">3. Conditional rendering of the components</p>
+              <p>
+                Commonly, we write down components that get rendered when clicked or any other event
+                e.g. Modals or Dropdowns. Solution: We avoided rendering these components until they
+                are needed i.e. Conditional Rendering.
+              </p>
+              <p className="text-lg font-bold">
+                4. Remove unnecessary awaits and use Promise.all() wherever applicable
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        tabindex="0"
+        className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full md:w-[50%] mx-auto my-8"
+      >
+        <div className="collapse-title text-xl font-medium">
+          How does prototypical inheritance work?
+
+        </div>
+        <div className="collapse-content">
+          <div className="card w-full  bg-base-100 shadow-xl mx-auto my-8">
+            <div className="card-body">
+              <div className="card-actions justify-end ">
+                <button className="btn btn-square btn-sm animate-pulse">
+                  <RiNumber2 className="text-xl " />
+                </button>
+              </div>
+              <h1 className="text-xl font-bold">
+                How does prototypical inheritance work?
+
+              </h1>
+              <div className="divider"></div>
+              <p>
+                There are Four Kinds of React State to Manage. When we talk about state in our
+                applications, it's important to be clear about what types of state actually matter.
+                There are four main types of state you need to properly manage in your React apps:
+              </p>
+              <li>Local state</li>
+              <li>Global state</li>
+              <li>Server state</li>
+              <li>URL state</li>
+              <p>
+                <span className="font-bold">Local state:</span> Local state is data we manage in one
+                or another component. Local state is most often managed in React using the useState
+                hook.
+                <span className="font-bold">Global state:</span> Global state is data we manage
+                across multiple components. Global state is necessary when we want to get and update
+                data anywhere in our app, or in multiple components at least.We can Manage Global
+                State With Redux. 
+                <span className="font-bold"> Server state</span> Data that comes from an external
+                server that must be integrated with our UI state. Server state is a simple concept,
+                but can be hard to manage alongside all of our local and global UI state. URL state
+                Data that exists on our URLs, including the pathname and query parameters.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        tabindex="0"
+        className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full md:w-[50%] mx-auto my-8"
+      >
+        <div className="collapse-title text-xl font-medium">
+          How does prototypical inheritance work?
+
+        </div>
+        <div className="collapse-content">
+          <div className="card w-full  bg-base-100 shadow-xl mx-auto my-8">
+            <div className="card-body">
+              <div className="card-actions justify-end ">
+                <button className="btn btn-square btn-sm animate-pulse">
+                  <RiNumber3 className="text-xl " />
+                </button>
+              </div>
+              <h1 className="text-xl font-bold">
+                How does prototypical inheritance work?
+
+              </h1>
+              <div className="divider"></div>
+              <p>
+              The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object.setPrototypeOf. Nowadays, in modern language, it is being set using __proto__.
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        tabindex="0"
+        className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full md:w-[50%] mx-auto my-8"
+      >
+        <div className="collapse-title text-xl font-medium">
+        Why you do not set the state directly in React?
+
+        </div>
+        <div className="collapse-content">
+          <div className="card w-full  bg-base-100 shadow-xl mx-auto my-8">
+            <div className="card-body">
+              <div className="card-actions justify-end ">
+                <button className="btn btn-square btn-sm animate-pulse">
+                  <RiNumber4 className="text-xl " />
+                </button>
+              </div>
+              <h1 className="text-xl font-bold">
+              Why you do not set the state directly in React?
+
+              </h1>
+              <div className="divider"></div>
+              <p>
+              The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object.setPrototypeOf. Nowadays, in modern language, it is being set using __proto__.
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        tabindex="0"
+        className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full md:w-[50%] mx-auto my-8"
+      >
+        <div className="collapse-title text-xl font-medium">
+        Why you do not set the state directly in React?
+
+        </div>
+        <div className="collapse-content">
+          <div className="card w-full  bg-base-100 shadow-xl mx-auto my-8">
+            <div className="card-body">
+              <div className="card-actions justify-end ">
+                <button className="btn btn-square btn-sm animate-pulse">
+                  <RiNumber5 className="text-xl " />
+                </button>
+              </div>
+              <h1 className="text-xl font-bold">
+              Why you do not set the state directly in React?
+
+              </h1>
+              <div className="divider"></div>
+              <p>
+              The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object.setPrototypeOf. Nowadays, in modern language, it is being set using __proto__.
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        tabindex="0"
+        className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full md:w-[50%] mx-auto my-8"
+      >
+        <div className="collapse-title text-xl font-medium">
+        Why you do not set the state directly in React?
+
+        </div>
+        <div className="collapse-content">
+          <div className="card w-full  bg-base-100 shadow-xl mx-auto my-8">
+            <div className="card-body">
+              <div className="card-actions justify-end ">
+                <button className="btn btn-square btn-sm animate-pulse">
+                  <RiNumber6 className="text-xl " />
+                </button>
+              </div>
+              <h1 className="text-xl font-bold">
+              Why you do not set the state directly in React?
+
+              </h1>
+              <div className="divider"></div>
+              <p>
+              The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object.setPrototypeOf. Nowadays, in modern language, it is being set using __proto__.
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Blogs;
