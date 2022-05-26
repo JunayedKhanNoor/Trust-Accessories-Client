@@ -6,7 +6,7 @@ const Blogs = () => {
       <h1 className="text-center text-2xl md:text-4xl font-extrabold my-12">
         Question answer, all about React Js
       </h1>
-      <progress class="progress w-full bg-secondary opacity-80"></progress>
+      <progress className="progress w-full bg-secondary opacity-80"></progress>
       <div
         tabIndex="0"
         className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full md:w-[50%] mx-auto my-8"
@@ -66,7 +66,7 @@ const Blogs = () => {
         </div>
       </div>
       <div
-        tabindex="0"
+        tabIndex="0"
         className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full md:w-[50%] mx-auto my-8"
       >
         <div className="collapse-title text-xl font-medium">
@@ -111,7 +111,7 @@ const Blogs = () => {
         </div>
       </div>
       <div
-        tabindex="0"
+        tabIndex="0"
         className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full md:w-[50%] mx-auto my-8"
       >
         <div className="collapse-title text-xl font-medium">
@@ -139,7 +139,7 @@ const Blogs = () => {
         </div>
       </div>
       <div
-        tabindex="0"
+        tabIndex="0"
         className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full md:w-[50%] mx-auto my-8"
       >
         <div className="collapse-title text-xl font-medium">
@@ -182,7 +182,7 @@ const Blogs = () => {
         </div>
       </div>
       <div
-        tabindex="0"
+        tabIndex="0"
         className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full md:w-[50%] mx-auto my-8"
       >
         <div className="collapse-title text-xl font-medium">
@@ -209,7 +209,7 @@ const Blogs = () => {
         </div>
       </div>
       <div
-        tabindex="0"
+        tabIndex="0"
         className="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-full md:w-[50%] mx-auto my-8"
       >
         <div className="collapse-title text-xl font-medium">
