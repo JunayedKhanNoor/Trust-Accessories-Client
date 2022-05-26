@@ -97,7 +97,9 @@ const MyPortfolio = () => {
             <h1 className="mb-4 text-4xl text-gray-700 font-bold">Education</h1>
             <ul>
               <li className="mb-4">
-                <h2 className="text-2xl font-medium text-gray-800">B.Sc. in Computer Science & Engineering (CSE)</h2>
+                <h2 className="text-2xl font-medium text-gray-800">
+                  B.Sc. in Computer Science & Engineering (CSE)
+                </h2>
                 <div className="mt-1">
                   <div>
                     <i className="bx bx-buildings"></i>
@@ -112,15 +114,11 @@ const MyPortfolio = () => {
                 </div>
               </li>
               <li className="mb-4">
-                <h2 className="text-2xl font-medium text-gray-800">
-                  Professional Training
-                </h2>
+                <h2 className="text-2xl font-medium text-gray-800">Professional Training</h2>
                 <div className="mt-1">
                   <div>
                     <i className="bx bx-buildings"></i>
-                    <small className="text-base text-gray-800">
-                      Complete Web Development
-                    </small>
+                    <small className="text-base text-gray-800">Complete Web Development</small>
                   </div>
                   <div>
                     <i className="bx bx-calendar text-sm"></i>
@@ -130,41 +128,59 @@ const MyPortfolio = () => {
               </li>
               <h1 className="mb-4 text-4xl text-gray-700 font-bold">Projects</h1>
               <li className="mb-4">
-                <h2 className="text-2xl font-medium text-gray-800">Backend Developer</h2>
+                <h2 className="text-2xl font-medium text-gray-800">Auto-Mart</h2>
                 <div className="mt-1">
                   <div>
-                    <i className="bx bx-buildings"></i>
-                    <small className="text-base text-gray-800">PT. Bonet Utama</small>
+                    <small className="text-base text-gray-800">
+                      Automobile warehouse management
+                    </small>
                   </div>
                   <div>
-                    <i className="bx bx-calendar text-sm"></i>
-                    <small className="text-sm text-gray-600">Dec 2018 - Dec 2019</small>
+                    <span
+                      onClick={() => window.open("https://auto-mart-45993.web.app/")}
+                      className="my-5 text-blue-500 text-lg"
+                      role="button"
+                    >
+                      Live Link
+                    </span>
                   </div>
                 </div>
               </li>
               <li className="mb-4">
-                <h2 className="text-2xl font-medium text-gray-800">Data Center (Linux Sysadmin)</h2>
+                <h2 className="text-2xl font-medium text-gray-800">To-Do-List </h2>
                 <div className="mt-1">
                   <div>
-                    <i className="bx bx-buildings text-sm"></i>
-                    <small className="text-base text-gray-800">PT. Bonet Utama</small>
+                    <small className="text-base text-gray-800">
+                    Task management app
+                    </small>
                   </div>
                   <div>
-                    <i className="bx bx-calendar text-sm"></i>
-                    <small className="text-sm text-gray-600">Agu 2017 - Okt 2018</small>
+                    <span
+                      onClick={() => window.open("https://to-do-2623e.web.app/")}
+                      className="my-5 text-blue-500 text-lg"
+                      role="button"
+                    >
+                      Live Link
+                    </span>
                   </div>
                 </div>
               </li>
               <li className="mb-4">
-                <h2 className="text-2xl font-medium text-gray-800">IT Support Internship</h2>
+                <h2 className="text-2xl font-medium text-gray-800">Immigration-Lab </h2>
                 <div className="mt-1">
                   <div>
-                    <i className="bx bx-buildings"></i>
-                    <small className="text-base text-gray-800">PT. Nutrifood Indonesia</small>
+                    <small className="text-base text-gray-800">
+                    Immigration consultancy website
+                    </small>
                   </div>
-                  <div className="">
-                    <i className="bx bx-calendar"></i>
-                    <small className="text-sm text-gray-600">3 Month</small>
+                  <div>
+                    <span
+                      onClick={() => window.open("https://immigration-lab.web.app/")}
+                      className="my-5 text-blue-500 text-lg"
+                      role="button"
+                    >
+                      Live Link
+                    </span>
                   </div>
                 </div>
               </li>
@@ -215,6 +231,9 @@ const MyPortfolio = () => {
                 </span>
                 <span className="mr-2 my-1 rounded-full border px-4 text-sm py-2 font-medium bg-gray-200">
                   MongoDB
+                </span>
+                <span className="mr-2 my-1 rounded-full border px-4 text-sm py-2 font-medium bg-gray-200">
+                  Firebase Authentication
                 </span>
               </li>
             </ul>
